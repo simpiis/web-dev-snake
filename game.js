@@ -1,11 +1,15 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js';
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersect} from './snake.js';
 import { update as updateFood, draw as drawFood } from './food.js';
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
+let gameOver = false;
 
 //game loop
 function main(currentTime) {
+  if (gameOver) {
+    return alert("Game over");
+  }
 
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
@@ -19,6 +23,8 @@ function main(currentTime) {
   update();
   //draw the changed values from update to the screen
   draw();
+  // if snake is on top of itself or out of bounds it dies
+  checkDeath();
 }
 
 // start loop first time
@@ -35,8 +41,16 @@ function draw() {
   drawFood(gameBoard);
 }
 
+function checkDeath() {
+  gameOver = (outsideGrid(getSnakeHead()) || snakeIntersect())
+}
+
 export function randomGridPos() {
 
-  return { x: Math.floor(Math.random() * 21) + 1, y: Math.floor(Math.random() * 21) + 1}
+  return { x: Math.floor(Math.random() * 21) + 1, y: Math.floor(Math.random() * 21) + 1} // random number between 1 and 21 since the grid is not 0 indexed
   
+}
+
+export function outsideGrid(position) {
+  return (position.x < 1 || position.x > 21 || position.y < 1 || position.y > 21)
 }
