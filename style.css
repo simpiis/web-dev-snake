@@ -26,4 +26,5 @@ body {
 
 .food {
   background-color: blue;
+  border: .25vmin solid white;
 }

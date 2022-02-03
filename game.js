@@ -12,7 +12,7 @@ function main(currentTime) {
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return; // game loop speed check
 
   
-  console.log("render");
+  
   lastRenderTime = currentTime;
 
   // logically update snake values like length position and food position
@@ -26,9 +26,11 @@ window.requestAnimationFrame(main);
 
 function update() {
   updateSnake();
+  updateFood();
 }
 
 function draw() {
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
+  drawFood(gameBoard);
 }
