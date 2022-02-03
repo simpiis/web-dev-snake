@@ -1,3 +1,4 @@
+import { onSnake, expandSnake } from './snake.js';
 let food = { x: 1, y: 1 };
 
 const EXPANSION_RATE = 1; // X new squares per food
@@ -18,3 +19,4 @@ export function draw(gameBoard) {
   gameBoard.appendChild(foodElement);
   
 }
+
