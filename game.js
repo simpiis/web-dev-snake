@@ -1,13 +1,16 @@
-import { SNAKE_SPEED } from `./snake.js`;
+import { SNAKE_SPEED } from './snake.js';
 
 let lastRenderTime = 0;
 
 //game loop
 function main(currentTime) {
+
+  window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return; // game loop speed check
 
-  window.requestAnimationFrame(main);
+  
+  console.log("render");
   lastRenderTime = currentTime;
 
   // logically update snake values like length position and food position
