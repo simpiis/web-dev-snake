@@ -8,7 +8,20 @@ function main(currentTime) {
 
   window.requestAnimationFrame(main);
   lastRenderTime = currentTime;
+
+  // logically update snake values like length position and food position
+  update();
+  //draw the changed values from update to the screen
+  draw();
 }
 
 // start loop first time
 window.requestAnimationFrame(main);
+
+function update() {
+  
+}
+
+function draw() {
+  
+}
