@@ -4,7 +4,7 @@ let food = { x: 1, y: 1 };
 const EXPANSION_RATE = 1; // X new squares per food
 
 export function update() {
-  if (onSnake(food)) {
+    if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
     food = { x: 20, y: 10 };
   }
@@ -19,4 +19,3 @@ export function draw(gameBoard) {
   gameBoard.appendChild(foodElement);
   
 }
-
