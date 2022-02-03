@@ -23,6 +23,7 @@ h1 {
 
 .snake {
   background-color: black;
+  border: .25vmin solid white;
 }
 
 .food {
