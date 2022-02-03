@@ -1,5 +1,9 @@
 export const SNAKE_SPEED = 2;
-const snakeBody = [{ x: 11, y: 11 }]  // start the snake center screen
+const snakeBody = [
+  { x: 10, y: 11 },
+  { x: 11, y: 11 },
+  { x: 12, y: 11 }
+]
 
 
 export function update() {
