@@ -1,5 +1,6 @@
+import { SNAKE_SPEED } from `./snake.js`;
+
 let lastRenderTime = 0;
-const SNAKE_SPEED = 2; // move X times per second
 
 //game loop
 function main(currentTime) {
