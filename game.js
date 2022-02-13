@@ -3,12 +3,18 @@ import { update as updateFood, draw as drawFood } from './food.js';
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
+
 let gameOver = false;
+let score = 0;
 
 //game loop
 function main(currentTime) {
   if (gameOver) {
-    return alert("Game over");
+    // reload to reset game
+    if (confirm("Game over. Press OK to restart")) {
+      window.location = '/';
+    }
+    return
   }
 
   window.requestAnimationFrame(main);
@@ -25,7 +31,11 @@ function main(currentTime) {
   draw();
   // if snake is on top of itself or out of bounds it dies
   checkDeath();
+
+  
 }
+
+
 
 // start loop first time
 window.requestAnimationFrame(main);

@@ -8,7 +8,8 @@ const EXPANSION_RATE = 1; // X new squares per food
 export function update() {
     if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
-    food = randomFoodPosition();
+      food = randomFoodPosition();
+      
   }
   
 }
