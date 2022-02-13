@@ -26,8 +26,8 @@ body {
  align-items: center;
  justify-content: center;
  background-color: rgb(175, 175, 175);
- width: 100vmin;
- height: 100vmin;
+ width: 400px;
+ height: 400px;
 }
 .snake {
   background-color: black;
