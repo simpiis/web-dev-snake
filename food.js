@@ -5,12 +5,13 @@ let food = randomFoodPosition();
 
 const EXPANSION_RATE = 1; // X new squares per food
 
-export function update() {
+export function update(score) {
     if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
-      food = randomFoodPosition();
-      
+      food = randomFoodPosition();  
+      score += 1;
   }
+  return score
   
 }
 

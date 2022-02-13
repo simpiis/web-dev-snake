@@ -6,32 +6,34 @@ const gameBoard = document.getElementById('game-board');
 
 let gameOver = false;
 let score = 0;
+let swag = false;
 
 //game loop
 function main(currentTime) {
   if (gameOver) {
-    // reload to reset game
-    if (confirm("Game over. Press OK to restart")) {
-      window.location = '/';
-    }
-    return
+    swag = true;
+    document.getElementById('game-board').style.display = 'none'
+    document.getElementById('game-over').style.display = 'inline'
+    document.getElementById('score-field').innerText = "Your score: " +score;
+    
   }
 
-  window.requestAnimationFrame(main);
-  const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-  if (secondsSinceLastRender < 1 / SNAKE_SPEED) return; // game loop speed check
+  if (!swag) {
+    window.requestAnimationFrame(main);
+    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
+    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return; // game loop speed check
 
   
   
-  lastRenderTime = currentTime;
+    lastRenderTime = currentTime;
 
-  // logically update snake values like length position and food position
-  update();
-  //draw the changed values from update to the screen
-  draw();
-  // if snake is on top of itself or out of bounds it dies
-  checkDeath();
-
+    // logically update snake values like length position and food position
+    update();
+    //draw the changed values from update to the screen
+    draw();
+    // if snake is on top of itself or out of bounds it dies
+    checkDeath();
+  }
   
 }
 
@@ -42,7 +44,7 @@ window.requestAnimationFrame(main);
 
 function update() {
   updateSnake();
-  updateFood();
+  score = updateFood(score);
 }
 
 function draw() {

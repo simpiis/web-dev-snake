@@ -9,7 +9,9 @@ body {
   
 }
 
-
+#score {
+  background-color: white;
+}
 #game-board {
   background-color: grey;
   width: 100vmin;
@@ -19,6 +21,14 @@ body {
   grid-template-columns: repeat(21,1fr);
 }
 
+#game-over {
+ display: none ;
+ align-items: center;
+ justify-content: center;
+ background-color: rgb(175, 175, 175);
+ width: 100vmin;
+ height: 100vmin;
+}
 .snake {
   background-color: black;
   border: .25vmin solid white;
