@@ -45,12 +45,7 @@ function checkDeath() {
   gameOver = (outsideGrid(getSnakeHead()) || snakeIntersect())
 }
 
-export function randomGridPos() {
 
-  return { x: Math.floor(Math.random() * 21) + 1, y: Math.floor(Math.random() * 21) + 1} // random number between 1 and 21 since the grid is not 0 indexed
-  
-}
-
-export function outsideGrid(position) {
+function outsideGrid(position) {
   return (position.x < 1 || position.x > 21 || position.y < 1 || position.y > 21)
 }

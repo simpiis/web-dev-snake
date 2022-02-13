@@ -1,5 +1,4 @@
 import { onSnake, expandSnake } from './snake.js';
-import { randomGridPos } from './game.js';
 
 
 let food = randomFoodPosition();
@@ -21,6 +20,15 @@ export function draw(gameBoard) {
   foodElement.classList.add('food');
   gameBoard.appendChild(foodElement);
   
+}
+
+function randomGridPos() {
+  // random number between 1 and 21 since the grid is not 0 indexed
+  return {
+    x: Math.floor(Math.random() * 21) + 1,
+    y: Math.floor(Math.random() * 21) + 1
+  }
+
 }
 
 function randomFoodPosition() {
