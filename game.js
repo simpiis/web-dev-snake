@@ -15,6 +15,7 @@ function main(currentTime) {
     document.getElementById('game-board').style.display = 'none'
     document.getElementById('game-over').style.display = 'inline'
     document.getElementById('score-field').innerText = "Your score: " +score;
+    document.getElementById('submit-score-button').addEventListener("click", submitScore);
     
   }
 
@@ -60,4 +61,14 @@ function checkDeath() {
 
 function outsideGrid(position) {
   return (position.x < 1 || position.x > 21 || position.y < 1 || position.y > 21)
+}
+
+function submitScore() {
+  let username = document.getElementById('username-text-field').value;
+  let scoreListDiv = document.getElementById('score');
+
+  document.getElementById('score-form').display = 'none';
+
+
+  
 }
