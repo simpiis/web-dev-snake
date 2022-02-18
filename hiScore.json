@@ -1,16 +1,15 @@
-{
+[
 
-"scores": {
-  "1": {
+
+  {
     "username": "simon",
     "score": 345
   },
-  "2": {
+  
+  {
     "username": "simon2",
     "score": 339
   }
 
-}
 
-
-}
+]
