@@ -7,17 +7,17 @@ const gameBoard = document.getElementById('game-board');
 
 let gameOver = false;
 let score = 0;
-let swag = false;
+let stopGame = false;
 
 //game loop
 function main(currentTime) {
   if (gameOver) {
-    swag = true;
+    stopGame = true;
     hiscoreFunction(score);
     
   }
 
-  if (!swag) {
+  if (!stopGame) {
     window.requestAnimationFrame(main);
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return; // game loop speed check

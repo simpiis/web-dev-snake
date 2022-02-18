@@ -1,20 +1,47 @@
-
+let totalScore = 0;
 
  export function main(score) {
   document.getElementById('game-board').style.display = 'none'
   document.getElementById('game-over').style.display = 'inline'
+  totalScore = score;
   document.getElementById('score-field').innerText = "Your score: " + score;
   document.getElementById('submit-score-button').addEventListener("click", submitScore);
 
 }
 
 
-function submitScore() {
+async function submitScore() {
   let username = document.getElementById('username-text-field').value;
-  let scoreListDiv = document.getElementById('score');
+  
+  document.getElementById('score-form').innerHTML = '';
+  console.log("USERNAME: " + username);
+  
+   await readHiScores();
+  
 
-  document.getElementById('score-form').display = 'none';
-  document.getElementById('score-form').innerHTML = " ";
-  console.log(username);
+}
+
+
+async function readHiScores() {
+  let rawData = await fetch('./hiScore.json');
+  let hiScores = await rawData.json();
+
+  let html = '';
+
+  console.log(hiScores);
+
+  for (let hiScore of hiScores) {
+    console.log(hiScore);
+    html += `
+    <article>
+    <p>${hiScore.username}       ${hiScore.score}</p>
+    </article>`;
+  }
+  
+ document.getElementById('display-json').innerHTML = html;
+  document.getElementById('display-json').style.display = 'inline';
+ 
+
+  
 
 }

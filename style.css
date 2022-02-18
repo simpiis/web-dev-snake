@@ -9,6 +9,12 @@ body {
   
 }
 
+
+
+#display-json{
+  display: none;
+}
+
 #score {
   background-color: white;
 }
