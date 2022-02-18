@@ -1,5 +1,6 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersect} from './snake.js';
 import { update as updateFood, draw as drawFood } from './food.js';
+import { main as hiscoreFunction} from './hiscore.js'
 
 let lastRenderTime = 0;
 const gameBoard = document.getElementById('game-board');
@@ -12,10 +13,7 @@ let swag = false;
 function main(currentTime) {
   if (gameOver) {
     swag = true;
-    document.getElementById('game-board').style.display = 'none'
-    document.getElementById('game-over').style.display = 'inline'
-    document.getElementById('score-field').innerText = "Your score: " +score;
-    document.getElementById('submit-score-button').addEventListener("click", submitScore);
+    hiscoreFunction(score);
     
   }
 
