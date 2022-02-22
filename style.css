@@ -9,10 +9,17 @@ body {
   
 }
 
+#score-form{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 
 
 #display-json{
   display: none;
+  align-self: center;
 }
 
 #score {
@@ -34,6 +41,7 @@ body {
  background-color: rgb(175, 175, 175);
  width: 400px;
  height: 400px;
+ text-align: center;
 }
 .snake {
   background-color: black;
