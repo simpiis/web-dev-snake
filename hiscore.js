@@ -38,10 +38,6 @@ function printScores() {
   let scoreArr = JSON.parse(localStorage.getItem('scores'));
   
 
-  
-
-
-
   let html = '';
 
   for (let hiScore of scoreArr) {
@@ -75,11 +71,6 @@ function sortScores(username) {
   while (scores.length > 5) {
     scores.pop();
   }
-
-
-  
-
-  
 
   
 
