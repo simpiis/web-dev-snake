@@ -9,7 +9,7 @@ export function update(score) {
     if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
       food = randomFoodPosition();  
-      score += 1;
+      score += EXPANSION_RATE;
   }
   return score
   
